@@ -9,13 +9,46 @@ root.style.height = "100vh";
 root.style.left = "50%";
 root.style.transform = "translateX(-50%)";
 root.style.backgroundColor = "lightgray";
-/*for (e of stage.children) {
-  e.style.position = "absolute";
-}*/
+
+// Add controls
+let nav = document.createElement("nav");
+nav.style.textAlign = "center";
+nav.id = "controls";
+let startButton = document.createElement("button");
+startButton.innerHTML = "Start";
+startButton.addEventListener("click", start);
+nav.append(startButton);
+let stopButton = document.createElement("button");
+stopButton.innerHTML = "Stop"
+stopButton.addEventListener("click", stop);
+nav.append(stopButton);
+root.append(nav);
+
+function hideControls() {
+  let nav = document.getElementById("controls");
+  nav.style.visibility = "hidden";
+}
+
+function showControls() {
+  let nav = document.getElementById("controls");
+  nav.style.visibility = "visible";
+}
+
 
 /* ************* Element Creation ********************* */
 function createElement(id, type = "div", x = 0, y = 0) {
   let e = document.createElement(type);
+  e.style.position = "absolute";
+  e.style.width = "fit-content";
+  e.style.left = x + "px";
+  e.style.top = y + "px";
+  e.id = id;
+  root.append(e);
+}
+
+function createImg(id, filename, x = 0, y = 0) {
+  let e = document.createElement("img");
+  e.src = filename;
   e.style.position = "absolute";
   e.style.width = "fit-content";
   e.style.left = x + "px";
@@ -131,7 +164,7 @@ function changeYBy(id, value) {
   else console.error(id + " does not exist");
 }
 
-function move(id, value) {
+function move(id, value = 10) {
   let e = document.getElementById(id);
   if (e) {
     let deg = e.style.rotate.substring(0, e.style.rotate.indexOf("deg"));
