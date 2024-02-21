@@ -57,6 +57,28 @@ function createImg(id, filename, x = 0, y = 0) {
   root.append(e);
 }
 
+function createTextBox(id, x = 0, y = 0) {
+  let e = document.createElement("input");
+  e.type = "text";
+  e.style.position = "absolute";
+  e.style.width = "fit-content";
+  e.style.left = x + "px";
+  e.style.top = y + "px";
+  e.id = id;
+  root.append(e);
+}
+
+function createButton(id, text = "button", x = 0, y = 0) {
+  let e = document.createElement("button");
+  e.innerHTML = text;
+  e.style.position = "absolute";
+  e.style.width = "fit-content";
+  e.style.left = x + "px";
+  e.style.top = y + "px";
+  e.id = id;
+  root.append(e);
+}
+
 function createRect(x, y, w, h, color = "white", id = "") {
   let e = document.createElement("div");
   e.style.position = "absolute";
@@ -82,7 +104,7 @@ function createCircle(x, y, r, color = "white", id = "") {
   root.append(e);
 }
 
-/* ************* Style Helpers ***************** */
+/* ************* Property and Style Helpers ***************** */
 function setWindowWidth(value) {
   root.style.width = value + "px";
 }
@@ -239,6 +261,16 @@ function setTextColor(id, color) {
 function getTextColor(id) {
   let e = document.getElementById(id);
   if (e) return e.style.color;
+  else console.error(id + " does not exist");
+}
+
+function getInputValue(id) {
+  let e = document.getElementById(id);
+  if (e) {
+    if (e.type == "text")
+      return e.value;
+    else console.error(id + " is not an element that has user input");
+  }
   else console.error(id + " does not exist");
 }
 
