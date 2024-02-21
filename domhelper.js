@@ -3,15 +3,16 @@ let isRunning = false;
 
 // Initialize main element
 stage.style.position = "absolute";
-stage.style.width = "640px";
-stage.style.height = "480px";
+stage.style.width = "100%";
+stage.style.height = "fit-content";
 stage.style.left = "50%";
 stage.style.transform = "translateX(-50%)";
 stage.style.backgroundColor = "lightgray";
-for (e of stage.children) {
+/*for (e of stage.children) {
   e.style.position = "absolute";
-}
+}*/
 
+/* ************* Element Creation ********************* */
 function createElement(id, type = "div", x = 0, y = 0) {
   let e = document.createElement(type);
   e.style.position = "absolute";
@@ -20,6 +21,14 @@ function createElement(id, type = "div", x = 0, y = 0) {
   e.style.top = y + "px";
   e.id = id;
   stage.append(e);
+}
+
+function createRect(x, y, w, h, id = "") {
+
+}
+
+function createCircle(x, y, r, id = "") {
+  
 }
 
 /* ************* Style Helpers ***************** */
