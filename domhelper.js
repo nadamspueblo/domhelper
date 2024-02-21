@@ -1,10 +1,11 @@
-const stage = document.getElementsByTagName("main").item(0);
+const stage = document.getElementsByTagName("body").item(0);
 let isRunning = false;
 
 // Initialize main element
 stage.style.position = "absolute";
-stage.style.width = "100%";
-stage.style.height = "fit-content";
+stage.style.margin = "0px";
+stage.style.width = "100vw";
+stage.style.height = "100vh";
 stage.style.left = "50%";
 stage.style.transform = "translateX(-50%)";
 stage.style.backgroundColor = "lightgray";
@@ -28,7 +29,7 @@ function createRect(x, y, w, h, id = "") {
 }
 
 function createCircle(x, y, r, id = "") {
-  
+
 }
 
 /* ************* Style Helpers ***************** */
