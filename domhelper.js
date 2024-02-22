@@ -365,3 +365,6 @@ function getCamelCaseProp(property) {
   }
   return actualProp;
 }
+
+/* **************** Reference Link ************* */
+console.info("DOM Helper by Nathan Adams\nSee full documentation https://www.pueblocs.org/domhelper");
