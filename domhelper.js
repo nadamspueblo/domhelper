@@ -1,5 +1,6 @@
 const root = document.getElementsByTagName("body").item(0);
 let isRunning = false;
+let isPaused = false;
 
 // Initialize main element
 root.style.position = "absolute";
@@ -329,7 +330,12 @@ function isTouching(id1, id2) {
 
 /* *************** Animation ******************* */
 function start() {
+  if (typeof (mainLoop) == 'undefined') {
+    isRunning = false;
+    console.error("You must define a mainLoop() function");
+  }
   isRunning = true;
+  isPaused = false;
   window.requestAnimationFrame(step);
 }
 
@@ -338,11 +344,7 @@ function stop() {
 }
 
 function step(time) {
-  if (typeof (mainLoop) != 'undefined') mainLoop(time);
-  else {
-    isRunning = false;
-    console.error("You must define a mainLoop() function");
-  }
+  mainLoop(time);
   if (isRunning) window.requestAnimationFrame(step)
 }
 
