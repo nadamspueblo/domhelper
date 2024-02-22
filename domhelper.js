@@ -36,7 +36,7 @@ function showControls() {
 
 
 /* ************* Element Creation ********************* */
-function createElement(id, type = "div", x = 0, y = 0) {
+function createElement(type = "div", id="", x = 0, y = 0) {
   let e = document.createElement(type);
   e.style.position = "absolute";
   e.style.width = "fit-content";
@@ -44,6 +44,7 @@ function createElement(id, type = "div", x = 0, y = 0) {
   e.style.top = y + "px";
   e.id = id;
   root.append(e);
+  return e;
 }
 
 function createImg(id, filename, x = 0, y = 0) {
@@ -55,6 +56,7 @@ function createImg(id, filename, x = 0, y = 0) {
   e.style.top = y + "px";
   e.id = id;
   root.append(e);
+  return e;
 }
 
 function createTextBox(id, x = 0, y = 0) {
@@ -66,6 +68,7 @@ function createTextBox(id, x = 0, y = 0) {
   e.style.top = y + "px";
   e.id = id;
   root.append(e);
+  return e;
 }
 
 function createButton(id, text = "button", x = 0, y = 0) {
@@ -77,6 +80,7 @@ function createButton(id, text = "button", x = 0, y = 0) {
   e.style.top = y + "px";
   e.id = id;
   root.append(e);
+  return e;
 }
 
 function createRect(x, y, w, h, color = "white", id = "") {
@@ -89,6 +93,7 @@ function createRect(x, y, w, h, color = "white", id = "") {
   e.style.backgroundColor = color;
   e.id = id;
   root.append(e);
+  return e;
 }
 
 function createCircle(x, y, r, color = "white", id = "") {
@@ -102,6 +107,7 @@ function createCircle(x, y, r, color = "white", id = "") {
   e.style.backgroundColor = color;
   e.id = id;
   root.append(e);
+  return e;
 }
 
 /* ************* Property and Style Helpers ***************** */
