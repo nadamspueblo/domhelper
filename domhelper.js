@@ -37,7 +37,7 @@ function showControls() {
 
 
 /* ************* Element Creation ********************* */
-function createElement(type = "div", id="", x = 0, y = 0) {
+function createElement(type, id="", x = 0, y = 0) {
   let e = document.createElement(type);
   e.style.position = "absolute";
   e.style.width = "fit-content";
@@ -111,7 +111,7 @@ function createCircle(x, y, r, color = "white", id = "") {
   return e;
 }
 
-/* ************* Property and Style Helpers ***************** */
+/* ************* Position and Size Functions ***************** */
 function setWindowWidth(value) {
   root.style.width = value + "px";
 }
@@ -205,6 +205,8 @@ function move(id, value = 10) {
   else console.error(id + " does not exist");
 }
 
+/* ************* Rotation Functions ***************** */
+
 function setRotation(id, degrees) {
   let e = document.getElementById(id);
   if (e) e.style.rotate = degrees + "deg";
@@ -226,6 +228,8 @@ function rotate(id, degrees) {
   }
   else console.error(id + " does not exist");
 }
+
+/* ************* Content and Color Functions ***************** */
 
 function setText(id, value) {
   let e = document.getElementById(id);
