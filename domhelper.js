@@ -22,6 +22,7 @@ nav.append(startButton);
 let stopButton = document.createElement("button");
 stopButton.innerHTML = "Stop"
 stopButton.addEventListener("click", stop);
+nav.style.visibility = "hidden";
 nav.append(stopButton);
 root.append(nav);
 
