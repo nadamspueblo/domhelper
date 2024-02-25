@@ -49,9 +49,9 @@ function createElement(type, id="", x = 0, y = 0) {
   return e;
 }
 
-function createImg(id, filename, x = 0, y = 0) {
+function createImg(url, x = 0, y = 0, id = "") {
   let e = document.createElement("img");
-  e.src = filename;
+  e.src = url;
   e.style.position = "absolute";
   e.style.width = "fit-content";
   e.style.left = x + "px";
