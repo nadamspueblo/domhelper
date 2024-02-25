@@ -242,21 +242,20 @@ function getText(id) {
   else console.error(id + " does not exist");
 }
 
-function setWindowColor(color) {
-  root.style.backgroundColor = color;
-}
-
-function getWindowColor() {
-  return root.style.backgroundColor;
-}
-
-function setColor(id, color) {
+function setColor(color, id = "") {
+  if (id == "") {
+    root.style.backgroundColor = color;
+    return;
+  }
   let e = document.getElementById(id);
   if (e) e.style.backgroundColor = color;
   else console.error(id + " does not exist");
 }
 
-function getColor(id) {
+function getColor(id = "") {
+  if (id == "") {
+    return root.style.backgroundColor;
+  }
   let e = document.getElementById(id);
   if (e) return e.style.backgroundColor;
   else console.error(id + " does not exist");
