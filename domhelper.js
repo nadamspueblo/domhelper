@@ -113,41 +113,39 @@ function createCircle(x, y, r, color = "white", id = "") {
 }
 
 /* ************* Position and Size Functions ***************** */
-function setWindowWidth(value) {
-  root.style.width = value + "px";
-}
-
-function getWindowWidth() {
-  return root.offsetWidth;
-}
-
-function setWindowHeight(value) {
-  root.style.height = value + "px";
-}
-
-function getWindowHeight() {
-  return root.offsetHeight;
-}
-
-function setWidth(id, value) {
+function setWidth(value, id = "") {
+  if (id == "") {
+    root.style.width = value + "px";
+    return;
+  }
   let e = document.getElementById(id);
   if (e) e.style.width = value + "px";
   else console.error(id + " does not exist");
 }
 
-function getWidth(id) {
+function getWidth(id = "") {
+  if (id == "") {
+    return root.offsetWidth;
+  }
   let e = document.getElementById(id);
   if (e) return e.offsetWidth;
   else console.error(id + " does not exist");
 }
 
-function setHeight(id, value) {
+function setHeight(value, id = "") {
+  if (id == "") {
+    root.style.height = value + "px";
+    return;
+  }
   let e = document.getElementById(id);
   if (e) e.style.height = value + "px";
   else console.error(id + " does not exist");
 }
 
-function getHeight(id) {
+function getHeight(id = "") {
+  if (id == "") {
+    return root.offsetHeight;
+  }
   let e = document.getElementById(id);
   if (e) return e.offsetHeight;
   else console.error(id + " does not exist");
