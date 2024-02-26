@@ -1,11 +1,11 @@
 function main() {
-  createTextBox("test");
-  createButton("button1", "Go", 0, 40);
-  addOnClickEvent("button1", buttonClicked);
+  createRect(100, 200, 200, 100, "blue", "r1");
+  createRect(250, 250, 200, 100, "red", "r2");
+  setColor("orange");
+  console.log(getWidth());
+  setWidth(400);
+  console.log(getWidth());
 }
 
-function buttonClicked() {
-  console.log(getInputValue("test"));
-}
 
 main();
