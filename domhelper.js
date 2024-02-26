@@ -38,7 +38,7 @@ function showControls() {
 
 
 /* ************* Element Creation ********************* */
-function createElement(type, x = 0, y = 0, id = "") {
+function createElement(type, id = "", x = 0, y = 0) {
   let e = document.createElement(type);
   e.style.position = "absolute";
   e.style.width = "fit-content";
@@ -49,7 +49,7 @@ function createElement(type, x = 0, y = 0, id = "") {
   return e;
 }
 
-function createImg(url, x = 0, y = 0, id = "") {
+function createImg(url, id = "", x = 0, y = 0) {
   let e = document.createElement("img");
   e.src = url;
   e.style.position = "absolute";
