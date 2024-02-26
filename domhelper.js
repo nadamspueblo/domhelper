@@ -350,6 +350,12 @@ function step(time) {
   if (isRunning) window.requestAnimationFrame(step)
 }
 
+/* *************** Random Numbers ************** */
+function getRandomInt(from, to) {
+  let range = Math.abs(to - from);
+  return Math.floor(Math.random() * (range + 1)) + from;
+}
+
 /* *************** Utility ********************* */
 
 function stripUnits(value, unit) {
