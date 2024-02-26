@@ -173,3 +173,4 @@ Sets the specified CSS property
 Returns the value of the specified CSS property   
 - ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
 - ```id``` the id of the element from which to get the property value
+
