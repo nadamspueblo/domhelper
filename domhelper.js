@@ -273,16 +273,6 @@ function getTextColor(id) {
   else console.error(id + " does not exist");
 }
 
-function getInputValue(id) {
-  let e = document.getElementById(id);
-  if (e) {
-    if (e.type == "text")
-      return e.value;
-    else console.error(id + " is not an element that has user input");
-  }
-  else console.error(id + " does not exist");
-}
-
 function setProperty(property, value, id) {
   let e = document.getElementById(id);
   if (e) {
@@ -299,6 +289,17 @@ function getProperty(property, id) {
   else console.error(id + " does not exist");
 }
 
+/* ************ Forms Helpers ****************** */
+
+function getInputValue(id) {
+  let e = document.getElementById(id);
+  if (e) {
+    if (e.type == "text")
+      return e.value;
+    else console.error(id + " is not an element that has user input");
+  }
+  else console.error(id + " does not exist");
+}
 
 /* ************ Event Helpers ****************** */
 
