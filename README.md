@@ -1,5 +1,5 @@
 # DOM Helper
-Document Object Model (DOM) Helper is a very simple library of functions to help students new to programming develop web apps using a small set of easy to use functions
+Document Object Model (DOM) Helper is a very simple library of functions to help students new to programming develop web apps using a small set of easy to use functions. This is a work in progress.
 
 # Setup
 1. Create a basic html document with a ```<body>``` element.
@@ -21,15 +21,15 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
 ```
 3. Use the DOM Helper functions in your ```script.js``` file
 ```javascript
-createElement("h1", "heading", 0, 0);
+createElement("h1", "heading");
 setWidth(getWidth(), "heading");
-setText("heading", "Welcome");
+setText("Welcome", "heading");
 setColor("orange", "heading");
-setProperty("heading", "text-align", "center");
+setProperty("text-align", "center", "heading");
 
 createButton("start-button", "Start");
-setX("start-button", getWidth() / 2 - getWidth("start-button") / 2);
-setY("start-button", getHeight() / 2 - getHeight("start-button") / 2);
+setX(getWidth() / 2 - getWidth("start-button") / 2, "start-button");
+setY(getHeight() / 2 - getHeight("start-button") / 2, "start-button");
 addOnClickEvent("start-button", start);
 
 function start() {
@@ -53,11 +53,11 @@ Creates a circle with the specified properties
 - ```r``` the radius of the circle in ```px```
 - ```id``` *optional* the id to give the element
 
-## createElement(type, x, y, id)
+## createElement(type, id, x, y)
 - ```type``` the tag name of the type of element to create
+- ```id``` *optional* the id to give the new element
 - ```x``` *optional* the x-coordinate to position the new element at in ```px```
 - ```y``` *optional* the y-coordinate to position the new element at in ```px```
-- ```id``` *optional* the id to give the new element
 
 ## createImg(url, x, y, id)
 - ```url``` the file path or web address for the image
