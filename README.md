@@ -139,3 +139,37 @@ Returns the angle of rotation of the specified element in ```deg``` as a number 
 - ```id``` the id of the element
 
 # Content, color, and style functions
+
+## setText(text, id)
+Set the text content (inner HTML) of the element with the specified id
+- ```text``` the text to display
+- ```id``` the id of the element
+
+## getText(id)
+Returns the text (inner HTML) of the element with the specified id
+- ```id``` the id of the element
+
+## setColor(color, id)
+Sets the color (background color) of the element
+- ```color``` the new color of the element
+- ```id``` *optional* the id of the element or, if omitted, the body element (window)
+
+## getColor(id)
+Returns the color (background color) of the element
+- ```id``` *optional* the id of the element or, if omitted, the body element (window)
+
+## setTextColor(color, id)
+Sets the text color of the element
+- ```color``` the new color of the text
+- ```id``` *optional* the id of the element or, if omitted, the body element (window)
+
+## setProperty(property, value, id)
+Sets the specified CSS property   
+- ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
+- ```value``` the new value to set for the property
+- ```id``` the id of the element on which to set the property
+
+## getProperty(property, id)
+Returns the value of the specified CSS property   
+- ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
+- ```id``` the id of the element from which to get the property value
