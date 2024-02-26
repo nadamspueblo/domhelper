@@ -9,7 +9,8 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
 <script src="script.js"></script>
 ```  
 3. Use the DOM Helper functions in your ```script.js``` file  
-```javascript
+
+```
 createElement("h1", "heading");
 setWidth(getWidth(), "heading");
 setText("Welcome", "heading");
