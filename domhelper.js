@@ -38,7 +38,7 @@ function showControls() {
 
 
 /* ************* Element Creation ********************* */
-function createElement(type, id="", x = 0, y = 0) {
+function createElement(type, x = 0, y = 0, id = "") {
   let e = document.createElement(type);
   e.style.position = "absolute";
   e.style.width = "fit-content";
@@ -151,7 +151,7 @@ function getHeight(id = "") {
   else console.error(id + " does not exist");
 }
 
-function setX(id, value) {
+function setX(value, id) {
   let e = document.getElementById(id);
   if (e) e.style.left = value + "px";
   else console.error(id + " does not exist");
@@ -163,7 +163,7 @@ function getX(id) {
   else console.error(id + " does not exist");
 }
 
-function setY(id, value) {
+function setY(value, id) {
   let e = document.getElementById(id);
   if (e) e.style.top = value + "px";
   else console.error(id + " does not exist");
@@ -175,7 +175,7 @@ function getY(id) {
   else console.error(id + " does not exist");
 }
 
-function changeXBy(id, value) {
+function changeXBy(value, id) {
   let e = document.getElementById(id);
   if (e) {
     e.style.left = e.offsetLeft + Number(value) + "px";
@@ -183,7 +183,7 @@ function changeXBy(id, value) {
   else console.error(id + " does not exist");
 }
 
-function changeYBy(id, value) {
+function changeYBy(value, id) {
   let e = document.getElementById(id);
   if (e) {
     ;
@@ -192,7 +192,7 @@ function changeYBy(id, value) {
   else console.error(id + " does not exist");
 }
 
-function move(id, value = 10) {
+function move(value, id) {
   let e = document.getElementById(id);
   if (e) {
     let deg = e.style.rotate.substring(0, e.style.rotate.indexOf("deg"));
@@ -206,7 +206,7 @@ function move(id, value = 10) {
 
 /* ************* Rotation Functions ***************** */
 
-function setRotation(id, degrees) {
+function setRotation(degrees, id) {
   let e = document.getElementById(id);
   if (e) e.style.rotate = degrees + "deg";
   else console.error(id + " does not exist");
@@ -220,7 +220,7 @@ function getRotation(id) {
   else console.error(id + " does not exist");
 }
 
-function rotate(id, degrees) {
+function rotate(degrees, id) {
   let e = document.getElementById(id);
   if (e) {
     e.style.rotate = stripUnits(e.style.rotate, "deg") + Number(degrees) + "deg";
@@ -230,7 +230,7 @@ function rotate(id, degrees) {
 
 /* ************* Content and Color Functions ***************** */
 
-function setText(id, value) {
+function setText(value, id) {
   let e = document.getElementById(id);
   if (e) e.innerHTML = value;
   else console.error(id + " does not exist");
@@ -261,7 +261,7 @@ function getColor(id = "") {
   else console.error(id + " does not exist");
 }
 
-function setTextColor(id, color) {
+function setTextColor(color, id) {
   let e = document.getElementById(id);
   if (e) e.style.color = color;
   else console.error(id + " does not exist");
@@ -283,7 +283,7 @@ function getInputValue(id) {
   else console.error(id + " does not exist");
 }
 
-function setProperty(id, property, value) {
+function setProperty(property, value, id) {
   let e = document.getElementById(id);
   if (e) {
     e.style[getCamelCaseProp(property)] = value;
@@ -291,7 +291,7 @@ function setProperty(id, property, value) {
   else console.error(id + " does not exist");
 }
 
-function getProperty(id, property) {
+function getProperty(property, id) {
   let e = document.getElementById(id);
   if (e) {
     return e.style[getCamelCaseProp(property)] = value;
