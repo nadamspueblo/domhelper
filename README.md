@@ -1,22 +1,12 @@
 # DOM Helper
-Document Object Model (DOM) Helper is a very simple library of functions to help students new to programming develop web apps using a small set of easy to use functions. This is a work in progress.
+Document Object Model (DOM) Helper is a very simple library of functions to help students new to programming develop web apps using a small set of easy to use functions. I developed this for use with my high school computer science classes. My students only get one quick introductory unit in HTML/CSS and the rest of the program is focused on programming, primarily in JavaScript. The idea behind this project was to allow students to use the UI capabilities of web browsers before they have technical knowledge necessary to understand how use the DOM. 
 
 # Setup
 1. Create a basic html document with a ```<body>``` element.
 2. Add this script tag **before** your own script tag ```<script src="https://pueblocs.org/domhelper/domhelper.js"></script>``` (See the example below)
 ```html
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>DOM Helper</title>
-</head>
-<body>
-  
-</body>
 <script src="https://pueblocs.org/domhelper/domhelper.js"></script>
 <script src="script.js"></script>
-</html>
 ```
 3. Use the DOM Helper functions in your ```script.js``` file
 ```javascript
