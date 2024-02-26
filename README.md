@@ -28,7 +28,7 @@ function start() {
 ```
 
 # Element Creation
-By default, elements are created with ```position: absolute``` and must be positioned on the screen using x- and y-coordinates
+By default, elements are created with ```position: absolute``` and must be positioned on the screen using x- and y-coordinates which correspond to the ```left``` and ```top``` of the element
 
 ## createButton(id, text, x, y)
 Shortcut function to create a button element
