@@ -3,12 +3,12 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
 
 # Setup
 1. Create a basic html document with a ```<body>``` element.
-2. Add this script tag **before** your own script tag ```<script src="https://pueblocs.org/domhelper/domhelper.js"></script>``` (See the example below)
+2. Add this script tag **before** your own script tag ```<script src="https://pueblocs.org/domhelper/domhelper.js"></script>``` (See the example below)  
 ```html
 <script src="https://pueblocs.org/domhelper/domhelper.js"></script>
 <script src="script.js"></script>
-```
-3. Use the DOM Helper functions in your ```script.js``` file
+```  
+3. Use the DOM Helper functions in your ```script.js``` file  
 ```javascript
 createElement("h1", "heading");
 setWidth(getWidth(), "heading");
@@ -25,6 +25,7 @@ function start() {
   console.log("Woohoo");
 }
 ```
+
 # Element Creation
 By default, elements are created with ```position: absolute``` and must be positioned on the screen using x- and y-coordinates
 
