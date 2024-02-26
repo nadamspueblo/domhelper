@@ -5,7 +5,6 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
 1. Create a basic html document with a ```<body>``` element.
 2. Add this script tag **before** your own script tag ```<script src="https://pueblocs.org/domhelper/domhelper.js"></script>``` (See the example below)
 ```html
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
