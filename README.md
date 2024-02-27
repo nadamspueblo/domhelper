@@ -188,9 +188,24 @@ Gets the value entered by the user in a textbox
 # Events
 
 ## addOnClickEvent(id, f) 
-Adds a function to call when the element is clicked
+Assigns a function to call when the element is clicked
 - ```id``` the id of the element
 - ```f``` the name of the function to call when the element is clicked
+
+## addKeyDownEvent(f)
+Assigns a function to call when a key is pressed
+- ```f``` the name of the function to call when a key is pressed
+The function should take an event parameter that will contain information about what key is pressed.
+
+```javascript
+addKeyDownEvent(keyPressed);
+
+function keyPressed(event) {
+  if (event.code == "ArrowUp") {
+    console.log("The up arrow was pressed");
+  }
+}
+```
 
 # Random Numbers
 
