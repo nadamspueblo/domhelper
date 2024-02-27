@@ -207,6 +207,11 @@ function keyPressed(event) {
 }
 ```
 
+## isTouching(id1, id1)
+Returns true if the two elements are touching
+- ```id1``` the id of an element
+- ```id2``` the id of another element
+
 # Random Numbers
 
 ## getRandomInt(from, to)
@@ -214,3 +219,5 @@ Returns a random integer between ```from``` and ```to``` inclusive
 - ```from``` the starting value for the range
 - ```to``` the ending value of the range
 
+# Animation
+To setup a project with animation, you must first define a ```mainLoop()``` function. 
