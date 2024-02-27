@@ -303,7 +303,7 @@ function getInputValue(id) {
 
 /* ************ Event Helpers ****************** */
 
-function addOnClickEvent(id, f) {
+function addClickEvent(id, f) {
   let e = document.getElementById(id);
   if (e) e.addEventListener("click", f);
   else console.error(id + " does not exist");

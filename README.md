@@ -187,7 +187,7 @@ Gets the value entered by the user in a textbox
 
 # Events
 
-## addOnClickEvent(id, f) 
+## addClickEvent(id, f) 
 Assigns a function to call when the element is clicked
 - ```id``` the id of the element
 - ```f``` the name of the function to call when the element is clicked
