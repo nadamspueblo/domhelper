@@ -37,7 +37,7 @@ function showControls() {
 }
 
 
-/* ************* Element Creation ********************* */
+/* ************* Element Creation and Removal ********************* */
 function createElement(type, id = "", x = 0, y = 0) {
   let e = document.createElement(type);
   e.style.position = "absolute";
@@ -110,6 +110,13 @@ function createCircle(x, y, r, color = "white", id = "") {
   e.id = id;
   root.append(e);
   return e;
+}
+
+function remove(id) {
+  let e = document.getElementById(id);
+  if (e) {
+    e.remove();
+  }
 }
 
 /* ************* Position and Size Functions ***************** */
@@ -270,6 +277,24 @@ function setTextColor(color, id) {
 function getTextColor(id) {
   let e = document.getElementById(id);
   if (e) return e.style.color;
+  else console.error(id + " does not exist");
+}
+
+function show(id) {
+  let e = document.getElementById(id);
+  if (e) e.style.visibility = "visible";
+  else console.error(id + " does not exist");
+}
+
+function hide(id) {
+  let e = document.getElementById(id);
+  if (e) e.style.visibility = "hidden";
+  else console.error(id + " does not exist");
+}
+
+function isVisible(id) {
+  let e = document.getElementById(id);
+  if (e) return e.style.visibility != "hidden" && e.style.visibility != "collapse";
   else console.error(id + " does not exist");
 }
 
