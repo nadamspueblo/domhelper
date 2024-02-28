@@ -7,7 +7,7 @@ setProperty("text-align", "center", "heading");
 createButton("start-button", "Start");
 setX(getWidth() / 2 - getWidth("start-button") / 2, "start-button");
 setY(getHeight() / 2 - getHeight("start-button") / 2, "start-button");
-addOnClickEvent("start-button", start);
+addClickEvent("start-button", start);
 
 function start() {
   console.log("Woohoo");
