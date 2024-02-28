@@ -182,7 +182,7 @@ Returns the value of the specified CSS property
 # Forms and Input Elements
 
 ## getInputValue(id)
-Gets the value entered by the user in a textbox
+Returns the value entered by the user in a textbox as a string
 - ```id``` the id of the input element
 
 # Events
