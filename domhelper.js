@@ -85,7 +85,7 @@ function createButton(id, text = "button", x = 0, y = 0) {
   return e;
 }
 
-function createRect(x, y, w, h, color = "white", id = "") {
+function createRect(x, y, w, h, color = "inherit", id = "") {
   let e = document.createElement("div");
   e.style.position = "absolute";
   e.style.width = w + "px";
@@ -98,7 +98,7 @@ function createRect(x, y, w, h, color = "white", id = "") {
   return e;
 }
 
-function createCircle(x, y, r, color = "white", id = "") {
+function createCircle(x, y, r, color = "inherit", id = "") {
   let e = document.createElement("div");
   e.style.position = "absolute";
   e.style.width = 2 * r + "px";
@@ -328,7 +328,7 @@ function getInputValue(id) {
 
 /* ************ Event Helpers ****************** */
 
-function addOnClickEvent(id, f) {
+function addClickEvent(id, f) {
   let e = document.getElementById(id);
   if (e) e.addEventListener("click", f);
   else console.error(id + " does not exist");

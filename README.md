@@ -10,7 +10,7 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
 ```  
 3. Use the DOM Helper functions in your ```script.js``` file  
 
-```
+```javascript
 createElement("h1", "heading");
 setWidth(getWidth(), "heading");
 setText("Welcome", "heading");
@@ -42,6 +42,7 @@ Creates a circle with the specified properties
 - ```x``` the x-coordinate to position the element in ```px```
 - ```y``` the y-coordinate to position the element in ```px```
 - ```r``` the radius of the circle in ```px```
+- ```color``` *optional* the color of the circle (background)
 - ```id``` *optional* the id to give the element
 
 ## createElement(type, id, x, y)
@@ -50,18 +51,18 @@ Creates a circle with the specified properties
 - ```x``` *optional* the x-coordinate to position the new element at in ```px```
 - ```y``` *optional* the y-coordinate to position the new element at in ```px```
 
-## createImg(url, x, y, id)
+## createImg(url, id, x, y)
 - ```url``` the file path or web address for the image
+- ```id``` *optional* the id to give the new element
 - ```x``` *optional* the x-coordinate to position the element at in ```px```
 - ```y``` *optional* the y-coordinate to position the element at in ```px```
-- ```id``` *optional* the id to give the new element
 
 ## createRect(x, y, w, h, color, id)
 - ```x``` the x-coordinate to position the element at in ```px```
 - ```y``` the y-coordinate to position the element at in ```px```
 - ```w``` the width of the rectangle in ```px```
 - ```h``` the height of the rectangel in ```px```
-- ```color``` the color of the rectangle (background)
+- ```color``` *optional* the color of the rectangle (background)
 - ```id``` *optional* the id to give the new element
 
 ## createTextBox(id, x, y)
@@ -163,6 +164,10 @@ Sets the text color of the element
 - ```color``` the new color of the text
 - ```id``` *optional* the id of the element or, if omitted, the body element (window)
 
+## getTextColor(id)
+Returns the text color of the element
+- ```id``` *optional* the id of the element or, if omitted, the body element (window)
+
 ## setProperty(property, value, id)
 Sets the specified CSS property   
 - ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
@@ -174,3 +179,45 @@ Returns the value of the specified CSS property
 - ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
 - ```id``` the id of the element from which to get the property value
 
+# Forms and Input Elements
+
+## getInputValue(id)
+Gets the value entered by the user in a textbox
+- ```id``` the id of the input element
+
+# Events
+
+## addClickEvent(id, f) 
+Assigns a function to call when the element is clicked
+- ```id``` the id of the element
+- ```f``` the name of the function to call when the element is clicked
+
+## addKeyDownEvent(f)
+Assigns a function to call when a key is pressed
+- ```f``` the name of the function to call when a key is pressed
+The function should take an event parameter that will contain information about what key is pressed.
+
+```javascript
+addKeyDownEvent(keyPressed);
+
+function keyPressed(event) {
+  if (event.code == "ArrowUp") {
+    console.log("The up arrow was pressed");
+  }
+}
+```
+
+## isTouching(id1, id1)
+Returns true if the two elements are touching
+- ```id1``` the id of an element
+- ```id2``` the id of another element
+
+# Random Numbers
+
+## getRandomInt(from, to)
+Returns a random integer between ```from``` and ```to``` inclusive
+- ```from``` the starting value for the range
+- ```to``` the ending value of the range
+
+# Animation
+To setup a project with animation, you must first define a ```mainLoop()``` function. 
