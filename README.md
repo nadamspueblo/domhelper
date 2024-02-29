@@ -258,7 +258,9 @@ To setup a project with animation, you must define a ```mainLoop()``` or ```main
 
 ```javascript
 function mainLoop(time) {
+  // time is how many milliseconds have elapsed since the last call to mainLoop
 
+  // Update state of animated elements
 }
 ```
 
@@ -268,8 +270,8 @@ Hides the animation controls
 ## showControls()
 Shows animation controls with built-in start and stop buttons
 
-## start()
+## startAnimation()
 Starts the animation loop which will repeatedly call your ```mainLoop(time)``` function.
 
-## stop()
+## stopAnimation()
 Stops the animation loop
