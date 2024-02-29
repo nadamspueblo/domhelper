@@ -19,13 +19,23 @@ initialize();
 // Add animation controls
 function createControls() {
   let nav = document.createElement("nav");
-  nav.style.textAlign = "center";
   nav.id = "controls";
+  nav.style.position = "relative";
+  nav.style.zIndex = 1000;
+  nav.style.textAlign = "center";
+  nav.style.backgroundColor = "darkgray";
+  nav.style.width = "fit-content";
+  nav.style.left = "50%";
+  nav.style.transform = "translateX(-50%)";
+  nav.style.borderRadius = "0px 0px 10px 10px";
+  nav.style.padding = "10px 40px 10px 40px";
   let startButton = document.createElement("button");
+  startButton.style.margin = "4px";
   startButton.innerHTML = "Start";
   startButton.addEventListener("click", startAnimation);
   nav.append(startButton);
   let stopButton = document.createElement("button");
+  stopButton.style.margin = "4px";
   stopButton.innerHTML = "Stop"
   stopButton.addEventListener("click", stopAnimation);
   nav.style.visibility = "hidden";
