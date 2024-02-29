@@ -3,28 +3,35 @@ let isRunning = false;
 let isPaused = false;
 
 // Initialize main element
-root.style.position = "absolute";
-root.style.margin = "0px";
-root.style.width = "100vw";
-root.style.height = "100vh";
-root.style.left = "50%";
-root.style.transform = "translateX(-50%)";
-root.style.backgroundColor = "lightgray";
+function initialize() {
+  root.style.position = "absolute";
+  root.style.margin = "0px";
+  root.style.width = "100vw";
+  root.style.height = "100vh";
+  root.style.left = "50%";
+  root.style.transform = "translateX(-50%)";
+  root.style.backgroundColor = "lightgray";
+  createControls();
+}
 
-// Add controls
-let nav = document.createElement("nav");
-nav.style.textAlign = "center";
-nav.id = "controls";
-let startButton = document.createElement("button");
-startButton.innerHTML = "Start";
-startButton.addEventListener("click", startAnimation);
-nav.append(startButton);
-let stopButton = document.createElement("button");
-stopButton.innerHTML = "Stop"
-stopButton.addEventListener("click", stopAnimation);
-nav.style.visibility = "hidden";
-nav.append(stopButton);
-root.append(nav);
+initialize();
+
+// Add animation controls
+function createControls() {
+  let nav = document.createElement("nav");
+  nav.style.textAlign = "center";
+  nav.id = "controls";
+  let startButton = document.createElement("button");
+  startButton.innerHTML = "Start";
+  startButton.addEventListener("click", startAnimation);
+  nav.append(startButton);
+  let stopButton = document.createElement("button");
+  stopButton.innerHTML = "Stop"
+  stopButton.addEventListener("click", stopAnimation);
+  nav.style.visibility = "hidden";
+  nav.append(stopButton);
+  root.append(nav);
+}
 
 function hideControls() {
   let nav = document.getElementById("controls");
