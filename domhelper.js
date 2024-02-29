@@ -17,11 +17,11 @@ nav.style.textAlign = "center";
 nav.id = "controls";
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
-startButton.addEventListener("click", start);
+startButton.addEventListener("click", startAnimation);
 nav.append(startButton);
 let stopButton = document.createElement("button");
 stopButton.innerHTML = "Stop"
-stopButton.addEventListener("click", stop);
+stopButton.addEventListener("click", stopAnimation);
 nav.style.visibility = "hidden";
 nav.append(stopButton);
 root.append(nav);
@@ -404,22 +404,31 @@ function isTouching(id1, id2) {
 }
 
 /* *************** Animation ******************* */
-function start() {
+let lastTime = 0;
+
+function startAnimation() {
   if (typeof (mainLoop) == 'undefined') {
     isRunning = false;
     console.error("You must define a mainLoop() function");
   }
   isRunning = true;
   isPaused = false;
-  window.requestAnimationFrame(step);
+  window.requestAnimationFrame(firstFrame);
 }
 
-function stop() {
+function stopAnimation() {
   isRunning = false;
 }
 
+function firstFrame(timeStamp) {
+  lastTime = timeStamp;
+  step(timeStamp);
+}
+
 function step(time) {
-  mainLoop(time);
+  let elapsed = time - lastTime;
+  lastTime = time;
+  mainLoop(elapsed);
   if (isRunning) window.requestAnimationFrame(step)
 }
 
