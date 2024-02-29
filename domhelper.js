@@ -85,6 +85,31 @@ function createButton(id, text = "button", x = 0, y = 0) {
   return e;
 }
 
+function createCheckBox(id, x = 0, y = 0) {
+  let e = document.createElement("input");
+  e.type = "checkbox";
+  e.style.position = "absolute";
+  e.style.width = "fit-content";
+  e.style.left = x + "px";
+  e.style.top = y + "px";
+  e.id = id;
+  root.append(e);
+  return e;
+}
+
+function createRadioButton(id, group, x = 0, y = 0) {
+  let e = document.createElement("input");
+  e.type = "radio";
+  e.name = group;
+  e.style.position = "absolute";
+  e.style.width = "fit-content";
+  e.style.left = x + "px";
+  e.style.top = y + "px";
+  e.id = id;
+  root.append(e);
+  return e;
+}
+
 function createRect(x, y, w, h, color = "inherit", id = "") {
   let e = document.createElement("div");
   e.style.position = "absolute";
@@ -324,6 +349,24 @@ function getInputValue(id) {
     else console.error(id + " is not an element that has user input");
   }
   else console.error(id + " does not exist");
+}
+
+function isChecked(id) {
+  let e = document.getElementById(id);
+  try {
+    if (e.type == "checkbox" || e.type == "radio") {
+      return e.checked;
+    }
+    else {
+      console.error(id + " is not a checkbox or radio button");
+      return false;
+    }
+  }
+  catch (error) {
+    console.error(error);
+    console.error(id + " is not a checkbox or radio button");
+    return false;
+  }
 }
 
 /* ************ Event Helpers ****************** */
