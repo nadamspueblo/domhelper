@@ -31,9 +31,15 @@ function start() {
 By default, elements are created with ```position: absolute``` and must be positioned on the screen using x- and y-coordinates which correspond to the ```left``` and ```top``` of the element
 
 ## createButton(id, text, x, y)
-Shortcut function to create a button element
+Creates a button element with the given id and text
 - ```id``` the id to give the new button element
 - ```text``` *optional* the text to display on the button
+- ```x``` *optional* the x-coordinate to position the element in ```px```
+- ```y``` *optional* the y-coordinate to position the element in ```px```
+
+## createCheckBox(id, x, y)
+Creates a square check box with the given id
+- ```id``` the id to give the new button element
 - ```x``` *optional* the x-coordinate to position the element in ```px```
 - ```y``` *optional* the y-coordinate to position the element in ```px```
 
@@ -65,10 +71,22 @@ Creates a circle with the specified properties
 - ```color``` *optional* the color of the rectangle (background)
 - ```id``` *optional* the id to give the new element
 
+## createRadioButton(id, group, x, y)
+Creates a round radio button with the given id as a part of the given group. Only one radio button within a group can be checked at a time
+- ```id``` the id to give the new button element
+- ```group``` the group of radio buttons to which this button should belong 
+- ```x``` *optional* the x-coordinate to position the element in ```px```
+- ```y``` *optional* the y-coordinate to position the element in ```px```
+
 ## createTextBox(id, x, y)
+Creates a textbox to provide a place for the user to enter text
 - ```id``` the id to give the textbox element
 - ```x``` the x-coordinate to position the element at in ```px```
 - ```y``` the y-coordinate to position the element at in ```px```
+
+## remove(id)
+Removes the specified element from the layout
+- ```id``` the id of the element to be removed
 
 # Size functions
 
@@ -179,11 +197,27 @@ Returns the value of the specified CSS property
 - ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
 - ```id``` the id of the element from which to get the property value
 
+## hide(id) 
+Hides the element with the given id making it invisible
+- ```id``` the id of the element to hide
+
+## show(id)
+Shows the element with the given id making it visible
+- ```id``` the id of the element to show
+
+## isVisible(id)
+Returns true if the element with the given id is visible, otherwise false
+- ```id``` the id of the element
+
 # Forms and Input Elements
 
 ## getInputValue(id)
 Returns the value entered by the user in a textbox as a string
 - ```id``` the id of the input element
+
+## isChecked(id)
+Returns true if the checkbox or radio button with the given id is checked
+- ```id``` the id of the checkbox or radio button
 
 # Events
 
@@ -220,4 +254,22 @@ Returns a random integer between ```from``` and ```to``` inclusive
 - ```to``` the ending value of the range
 
 # Animation
-To setup a project with animation, you must first define a ```mainLoop()``` function. 
+To setup a project with animation, you must define a ```mainLoop()``` or ```mainLoop(time)``` function.
+
+```javascript
+function mainLoop(time) {
+
+}
+```
+
+## hideControls()
+Hides the animation controls
+
+## showControls()
+Shows animation controls with built-in start and stop buttons
+
+## start()
+Starts the animation loop which will repeatedly call your ```mainLoop(time)``` function.
+
+## stop()
+Stops the animation loop
