@@ -141,6 +141,10 @@ function remove(id) {
   let e = document.getElementById(id);
   if (e) {
     e.remove();
+    return e;
+  }
+  else {
+    console.error(id + " doesn't exist");
   }
 }
 
