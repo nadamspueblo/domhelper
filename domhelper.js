@@ -10,7 +10,9 @@ function initialize() {
   root.style.height = "100vh";
   root.style.left = "50%";
   root.style.transform = "translateX(-50%)";
-  root.style.backgroundColor = "lightgray";
+  if (root.style.backgroundColor == "" && getVisibleElementCount(root) < 1)
+    root.style.backgroundColor = "lightgray";
+  
   createControls();
 }
 
@@ -471,6 +473,20 @@ function getCamelCaseProp(property) {
     }
   }
   return actualProp;
+}
+
+function getVisibleElementCount(parent, getChildrensChildren = false){
+  let relevantChildren = 0;
+  let children = parent.childNodes.length;
+  for(let i = 0; i < children; i++){
+      if(parent.childNodes[i].nodeType == 1){
+          if(getChildrensChildren)
+              relevantChildren += getCount(parent.childNodes[i],true);
+          relevantChildren++;
+      }
+  }
+  relevantChildren -= parent.getElementsByTagName("script").length;
+  return relevantChildren;
 }
 
 /* **************** Reference Link ************* */
