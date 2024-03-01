@@ -241,7 +241,7 @@ function keyPressed(event) {
 }
 ```
 
-## isTouching(id1, id1)
+## isTouching(id1, id2)
 Returns true if the two elements are touching
 - ```id1``` the id of an element
 - ```id2``` the id of another element
