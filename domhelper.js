@@ -364,9 +364,12 @@ function getProperty(property, id) {
 function getInputValue(id) {
   let e = document.getElementById(id);
   if (e) {
-    if (e.type == "text")
-      return e.value;
-    else console.error(id + " is not an element that has user input");
+    if (e.tagName.toLocaleLowerCase() == "input" || e.tagName.toLocaleLowerCase() == "button"){
+      if (e.value)
+        return e.value;
+      else console.log(id + " does not have an input value");
+    }
+    else console.error(id + " is not an element that has an input value");
   }
   else console.error(id + " does not exist");
 }
