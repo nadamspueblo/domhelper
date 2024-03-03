@@ -331,10 +331,24 @@ function show(id) {
   else console.error(id + " does not exist");
 }
 
+function showAll() {
+  const elements = getVisibleElements();
+  for (e of elements){
+    e.style.visibility = "visible";
+  }
+}
+
 function hide(id) {
   let e = document.getElementById(id);
   if (e) e.style.visibility = "hidden";
   else console.error(id + " does not exist");
+}
+
+function hideAll() {
+  const elements = getVisibleElements();
+  for (e of elements){
+    e.style.visibility = "hidden";
+  }
 }
 
 function isVisible(id) {
@@ -475,18 +489,16 @@ function getCamelCaseProp(property) {
   return actualProp;
 }
 
-function getVisibleElementCount(parent, getChildrensChildren = false) {
-  let relevantChildren = 0;
-  let children = parent.childNodes.length;
-  for (let i = 0; i < children; i++) {
-    if (parent.childNodes[i].nodeType == 1) {
-      if (getChildrensChildren)
-        relevantChildren += getVisibleElementCount(parent.childNodes[i], true);
-      relevantChildren++;
+function getVisibleElements() {
+  let elements = [];
+  let count = root.childNodes.length;
+  for (let i = 0; i < count; i++) {
+    const e = root.childNodes[i];
+    if (e.nodeType == 1 && e.tagName.toLowerCase() != "script" && e.id != "controls") {
+      elements.push(e);
     }
   }
-  relevantChildren -= parent.getElementsByTagName("script").length;
-  return relevantChildren;
+  return elements;
 }
 
 /* **************** Reference Link ************* */
