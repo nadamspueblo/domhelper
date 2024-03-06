@@ -147,12 +147,14 @@ function createCircle(x, y, r, color = "inherit", id = "") {
   e.style.borderRadius = "50%";
   e.style.left = x + "px";
   e.style.top = y + "px";
+  e.style.transform = "translate(-50%, -50%)";
   e.style.backgroundColor = color;
   e.style.display = "flex";
   e.style.flexDirection = "row";
   e.style.justifyContent = "center";
   e.style.alignItems = "center";
   e.id = id;
+  e.classList.add("circle")
   root.append(e);
   return e;
 }
