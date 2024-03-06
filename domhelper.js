@@ -337,7 +337,7 @@ function show(id) {
 
 function showAll() {
   const elements = getVisibleElements();
-  for (e of elements){
+  for (e of elements) {
     e.style.visibility = "visible";
   }
 }
@@ -350,7 +350,7 @@ function hide(id) {
 
 function hideAll() {
   const elements = getVisibleElements();
-  for (e of elements){
+  for (e of elements) {
     e.style.visibility = "hidden";
   }
 }
@@ -382,7 +382,7 @@ function getProperty(property, id) {
 function getInputValue(id) {
   let e = document.getElementById(id);
   if (e) {
-    if (e.tagName.toLocaleLowerCase() == "input" || e.tagName.toLocaleLowerCase() == "button"){
+    if (e.tagName.toLocaleLowerCase() == "input" || e.tagName.toLocaleLowerCase() == "button") {
       if (e.value)
         return e.value;
       else console.log(id + " does not have an input value");
@@ -390,6 +390,21 @@ function getInputValue(id) {
     else console.error(id + " is not an element that has an input value");
   }
   else console.error(id + " does not exist");
+}
+
+function setInputValue(val, id) {
+  let e = document.getElementById(id);
+  if (e) {
+    if (e.tagName.toLocaleLowerCase() == "input" || e.tagName.toLocaleLowerCase() == "button") {
+      e.value = val;
+    }
+    else console.error(id + " is not an element that has an input value");
+  }
+  else console.error(id + " does not exist");
+}
+
+function clearInputValue(id) {
+  setInputValue("", id);
 }
 
 function isChecked(id) {
