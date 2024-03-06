@@ -286,6 +286,11 @@ function rotate(degrees, id) {
   else console.error(id + " does not exist");
 }
 
+/* ************* Navigation *********************** */
+function navigateTo(url) {
+  window.location.assign(url);
+}
+
 /* ************* Content and Color Functions ***************** */
 
 function setText(value, id) {
