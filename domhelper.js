@@ -148,6 +148,10 @@ function createCircle(x, y, r, color = "inherit", id = "") {
   e.style.left = x + "px";
   e.style.top = y + "px";
   e.style.backgroundColor = color;
+  e.style.display = "flex";
+  e.style.flexDirection = "row";
+  e.style.justifyContent = "center";
+  e.style.alignItems = "center";
   e.id = id;
   root.append(e);
   return e;
