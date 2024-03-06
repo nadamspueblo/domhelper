@@ -331,6 +331,12 @@ function getTextColor(id) {
   else console.error(id + " does not exist");
 }
 
+function setImage(url, id) {
+  let e = document.getElementById(id);
+  if (e && e.tagName.toLocaleLowerCase() == "img") e.src = url;
+  else console.error(id + " does not exist or is not an image element");
+}
+
 function show(id) {
   let e = document.getElementById(id);
   if (e) e.style.visibility = "visible";
