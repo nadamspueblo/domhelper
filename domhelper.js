@@ -385,6 +385,12 @@ function getProperty(property, id) {
   else console.error(id + " does not exist");
 }
 
+/* ************ Sound ************************** */
+function playSound(url) {
+  let sound = new Audio(url);
+  sound.play();
+}
+
 /* ************ Forms Helpers ****************** */
 
 function getInputValue(id) {
