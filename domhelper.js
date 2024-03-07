@@ -159,6 +159,23 @@ function createCircle(x, y, r, color = "inherit", id = "") {
   return e;
 }
 
+function attach(id, parentId = "") {
+  let e = document.getElementById(id);
+  let parent;
+  if (parentId == "") {
+    parent = root;
+  }
+  else {
+    parent = document.getElementById(parentId);
+  }
+  try {
+    parent.appendChild(e);
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
+
 function remove(id) {
   let e = document.getElementById(id);
   if (e) {
