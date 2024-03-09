@@ -391,7 +391,7 @@ function isVisible(id) {
   else console.error(id + " does not exist");
 }
 
-function setProperty(property, value, id) {
+function setStyle(property, value, id) {
   let e = document.getElementById(id);
   if (e) {
     e.style[getCamelCaseProp(property)] = value;
@@ -399,7 +399,7 @@ function setProperty(property, value, id) {
   else console.error(id + " does not exist");
 }
 
-function getProperty(property, id) {
+function getStyle(property, id) {
   let e = document.getElementById(id);
   if (e) {
     return e.style[getCamelCaseProp(property)] = value;
