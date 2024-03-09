@@ -44,7 +44,7 @@ Creates a square check box with the given id
 - ```y``` *optional* the y-coordinate to position the element in ```px```
 
 ## createCircle(x, y, r, color, id)
-Creates a circle with the specified properties
+Creates a circle with the specified properties. The circle is located by its center
 - ```x``` the x-coordinate to position the element in ```px```
 - ```y``` the y-coordinate to position the element in ```px```
 - ```r``` the radius of the circle in ```px```
@@ -83,10 +83,6 @@ Creates a textbox to provide a place for the user to enter text
 - ```id``` the id to give the textbox element
 - ```x``` the x-coordinate to position the element at in ```px```
 - ```y``` the y-coordinate to position the element at in ```px```
-
-## remove(id)
-Removes the specified element from the layout
-- ```id``` the id of the element to be removed
 
 # Size functions
 
@@ -157,7 +153,7 @@ Sets the angle of rotation to the given value
 Returns the angle of rotation of the specified element in ```deg``` as a number type
 - ```id``` the id of the element
 
-# Content, color, and style functions
+# Content functions
 
 ## setText(text, id)
 Set the text content (inner HTML) of the element with the specified id
@@ -167,6 +163,32 @@ Set the text content (inner HTML) of the element with the specified id
 ## getText(id)
 Returns the text (inner HTML) of the element with the specified id
 - ```id``` the id of the element
+
+## setImage(src, id)
+Sets the source for an image element
+- ```src``` the web address or file for the image source
+- ```id``` the id of an image element
+
+## getImage(id)
+Returns the URL of the ```src``` attribute for an image element
+- ```id``` the id of an image element
+
+## attach(id, parentId)
+Attaches the element with ```id``` to be a child of the element with ```parentId```
+- ```id``` the id of the child element
+- ```parentId``` *optional* the id of the parent or container element. If no parent is specified it will be attached to the ```<body>``` element
+
+## remove(id)
+Removes the element with ```id``` from the layout
+- ```id``` the id of the element to remove
+
+# Navigation
+
+## navigateTo(url)
+Opens the specified URL in the browser window
+- ```url``` the URL (web address or file) to navigate to
+
+# CSS style functions
 
 ## setColor(color, id)
 Sets the color (background color) of the element
@@ -186,14 +208,14 @@ Sets the text color of the element
 Returns the text color of the element
 - ```id``` *optional* the id of the element or, if omitted, the body element (window)
 
-## setProperty(property, value, id)
-Sets the specified CSS property   
+## setStyle(property, value, id)
+Sets the specified CSS style property   
 - ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
 - ```value``` the new value to set for the property
 - ```id``` the id of the element on which to set the property
 
-## getProperty(property, id)
-Returns the value of the specified CSS property   
+## getStyle(property, id)
+Returns the value of the specified CSS style property   
 - ```property``` the name of the CSS property to set. Property names can be passed with hyphens, e.g. ```text-align```, or in camelCase, e.g. ```textAlign```
 - ```id``` the id of the element from which to get the property value
 
@@ -201,19 +223,40 @@ Returns the value of the specified CSS property
 Hides the element with the given id making it invisible
 - ```id``` the id of the element to hide
 
+## hideAll()
+Hides all the elements in the layout
+
 ## show(id)
 Shows the element with the given id making it visible
 - ```id``` the id of the element to show
 
+## showAll()
+Makes all the elements in the layout visible
+
 ## isVisible(id)
 Returns true if the element with the given id is visible, otherwise false
 - ```id``` the id of the element
+
+# Sound
+
+## playSound(url)
+Plays the sound located a ```url```
+- ```url``` the URL or file name of the sound to play
 
 # Forms and Input Elements
 
 ## getInputValue(id)
 Returns the value entered by the user in a textbox as a string
 - ```id``` the id of the input element
+
+## setInputValue(value, id)
+Sets the input value to the given value
+- ```value``` the value to set for the input element
+- ```id``` the id of the input element
+
+## clearInputValue(id)
+Clears the value from the input element
+- ```id``` the id of an input element
 
 ## isChecked(id)
 Returns true if the checkbox or radio button with the given id is checked
@@ -240,6 +283,12 @@ function keyPressed(event) {
   }
 }
 ```
+
+## onEvent(type, id, f)
+Creates and event listener of the given type
+- ```type``` the type of event
+- ```id``` the id of the element
+- ```f``` the name of the function to call when the element is clicked
 
 ## isTouching(id1, id2)
 Returns true if the two elements are touching
