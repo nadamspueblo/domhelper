@@ -473,6 +473,16 @@ function addKeyDownEvent(f) {
   addEventListener("keydown", f);
 }
 
+function onEvent(type, id, f) {
+  let e = document.getElementById(id);
+  try {
+    e.addEventListener(type, f);
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
+
 function isTouching(id1, id2) {
   let e1 = document.getElementById(id1);
   let e2 = document.getElementById(id2);
