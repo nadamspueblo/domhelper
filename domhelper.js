@@ -359,6 +359,12 @@ function setImage(url, id) {
   else console.error(id + " does not exist or is not an image element");
 }
 
+function getImage(id) {
+  let e = document.getElementById(id);
+  if (e && e.tagName.toLocaleLowerCase() == "img") return e.src;
+  else console.error(id + " does not exist or is not an image element");
+}
+
 function show(id) {
   let e = document.getElementById(id);
   if (e) e.style.visibility = "visible";
