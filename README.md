@@ -1,31 +1,47 @@
 # DOM Helper
 Document Object Model (DOM) Helper is a very simple library of functions to help students new to programming develop web apps using a small set of easy to use functions. I developed this for use with my high school computer science classes. My students only get one quick introductory unit in HTML/CSS and the rest of the program is focused on programming, primarily in JavaScript. The idea behind this project was to allow students to use the UI capabilities of web browsers before they have technical knowledge necessary to understand how use the DOM. 
 
+# Table of Contents
+
+- [Setup](#setup)
+- [Element creation](#element-creation)
+- [Size functions](#size-functions)
+- [Position and movement](#position-and-movement-functions)
+- [Rotation and direction](#rotation-and-direction-functions)
+- [Content functions](#content-functions)
+- [Navigation](#navigation)
+- [CSS Style functions](#css-style-functions)
+- [Sound](#sound)
+- [Forms and Input](#forms-and-input-elements)
+- [Events](#events)
+- [Random numbers](#random-numbers)
+- [Animation](#animation)
+
 # Setup
 1. Create a basic html document with a ```<body>``` element.
-2. Add this script tag **before** your own script tag ```<script src="https://pueblocs.org/domhelper/domhelper.js"></script>``` (See the example below)  
-```html
-<script src="https://pueblocs.org/domhelper/domhelper.js"></script>
-<script src="script.js"></script>
-```  
+2. Add this script tag **before** your own script tag ```<script defer src="https://pueblocs.org/domhelper/domhelper.js"></script>``` (See the example below)  
+    ```html
+    <script defer src="https://pueblocs.org/domhelper/domhelper.js"></script>
+    <script defer src="script.js"></script>
+    ```  
 3. Use the DOM Helper functions in your ```script.js``` file  
 
-```javascript
-createElement("h1", "heading");
-setWidth(getWidth(), "heading");
-setText("Welcome", "heading");
-setColor("orange", "heading");
-setProperty("text-align", "center", "heading");
+    ```javascript
+    createElement("h1", "heading");
+    setWidth(getWidth(), "heading");
+    setText("Welcome", "heading");
+    setColor("orange", "heading");
+    setProperty("text-align", "center", "heading");
 
-createButton("start-button", "Start");
-setX(getWidth() / 2 - getWidth("start-button") / 2, "start-button");
-setY(getHeight() / 2 - getHeight("start-button") / 2, "start-button");
-addClickEvent("start-button", start);
+    createButton("start-button", "Start");
+    setX(getWidth() / 2 - getWidth("start-button") / 2, "start-button");
+    setY(getHeight() / 2 - getHeight("start-button") / 2, "start-button");
+    addClickEvent("start-button", start);
 
-function start() {
-  console.log("Woohoo");
-}
-```
+    function start() {
+      console.log("Woohoo");
+    }
+    ```
 
 # Element Creation
 By default, elements are created with ```position: absolute``` and must be positioned on the screen using x- and y-coordinates which correspond to the ```left``` and ```top``` of the element
