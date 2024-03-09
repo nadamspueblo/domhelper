@@ -355,13 +355,13 @@ function getTextColor(id) {
 
 function setImage(url, id) {
   let e = document.getElementById(id);
-  if (e && e.tagName.toLocaleLowerCase() == "img") e.src = url;
+  if (e && e.tagName.toLowerCase() == "img") e.src = url;
   else console.error(id + " does not exist or is not an image element");
 }
 
 function getImage(id) {
   let e = document.getElementById(id);
-  if (e && e.tagName.toLocaleLowerCase() == "img") return e.src;
+  if (e && e.tagName.toLowerCase() == "img") return e.src;
   else console.error(id + " does not exist or is not an image element");
 }
 
