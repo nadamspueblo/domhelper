@@ -26,12 +26,12 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
     ```  
 3. Use the DOM Helper functions in your ```script.js``` file  
 
-    ```javascript
+    ```javascript 
     createElement("h1", "heading");
     setWidth(getWidth(), "heading");
     setText("Welcome", "heading");
     setColor("orange", "heading");
-    setProperty("text-align", "center", "heading");
+    setStyle("text-align", "center", "heading");
 
     createButton("start-button", "Start");
     setX(getWidth() / 2 - getWidth("start-button") / 2, "start-button");
@@ -311,12 +311,15 @@ Returns true if the two elements are touching
 - ```id1``` the id of an element
 - ```id2``` the id of another element
 
-# Random Numbers
+# Random
 
 ## getRandomInt(from, to)
 Returns a random integer between ```from``` and ```to``` inclusive
 - ```from``` the starting value for the range
 - ```to``` the ending value of the range
+
+## getRandomColor()
+Returns a random ```rgb()``` color string for use in CSS style property
 
 # Animation
 To setup a project with animation, you must define a ```mainLoop()``` or ```mainLoop(timeStamp)``` function.
