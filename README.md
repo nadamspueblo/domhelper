@@ -319,12 +319,10 @@ Returns a random integer between ```from``` and ```to``` inclusive
 - ```to``` the ending value of the range
 
 # Animation
-To setup a project with animation, you must define a ```mainLoop()``` or ```mainLoop(time)``` function.
+To setup a project with animation, you must define a ```mainLoop()``` or ```mainLoop(timeStamp)``` function.
 
 ```javascript
-function mainLoop(time) {
-  // time is how many milliseconds have elapsed since the last call to mainLoop
-
+function mainLoop(timeStamp) {
   // Update state of animated elements
 }
 ```
