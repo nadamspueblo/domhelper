@@ -14,7 +14,7 @@ Document Object Model (DOM) Helper is a very simple library of functions to help
 - [Sound](#sound)
 - [Forms and Input](#forms-and-input-elements)
 - [Events](#events)
-- [Random numbers](#random-numbers)
+- [Random](#random)
 - [Animation](#animation)
 
 # Setup
