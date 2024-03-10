@@ -536,6 +536,13 @@ function getRandomInt(from, to) {
   return Math.floor(Math.random() * (range + 1)) + from;
 }
 
+function getRandomColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
 /* *************** Utility ********************* */
 
 function stripUnits(value, unit) {
