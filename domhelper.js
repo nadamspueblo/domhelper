@@ -514,6 +514,7 @@ function startAnimation() {
   if (typeof (mainLoop) == 'undefined') {
     isRunning = false;
     console.error("You must define a mainLoop() function");
+    return;
   }
   isRunning = true;
   isPaused = false;
