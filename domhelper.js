@@ -517,22 +517,15 @@ function startAnimation() {
   }
   isRunning = true;
   isPaused = false;
-  window.requestAnimationFrame(firstFrame);
+  window.requestAnimationFrame(step);
 }
 
 function stopAnimation() {
   isRunning = false;
 }
 
-function firstFrame(timeStamp) {
-  lastTime = timeStamp;
-  step(timeStamp);
-}
-
-function step(time) {
-  let elapsed = time - lastTime;
-  lastTime = time;
-  mainLoop(elapsed);
+function step(timeStamp) {
+  mainLoop(timeStamp);
   if (isRunning) window.requestAnimationFrame(step)
 }
 
