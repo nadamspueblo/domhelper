@@ -285,6 +285,11 @@ Assigns a function to call when the element is clicked
 - ```id``` the id of the element
 - ```f``` the name of the function to call when the element is clicked
 
+## removeClickEvent(id, f)
+Removes the click event from the element with the given id
+- ```id``` the id of the elment with the click event
+- ```f``` the name of the function associated with the click event
+
 ## addKeyDownEvent(f)
 Assigns a function to call when a key is pressed
 - ```f``` the name of the function to call when a key is pressed
