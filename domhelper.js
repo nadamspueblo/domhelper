@@ -475,6 +475,16 @@ function addClickEvent(id, f) {
   else console.error(id + " does not exist");
 }
 
+function removeClickEvent(id, f) {
+  let e = document.getElementById(id);
+  try {
+    e.removeEventListener("click", f);
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
+
 function addKeyDownEvent(f) {
   addEventListener("keydown", f);
 }
