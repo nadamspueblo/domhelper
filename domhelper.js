@@ -543,10 +543,10 @@ function stopAnimation() {
 function resetAnimation() {
   try {
     stopAnimation();
-    init();
+    reset();
   } catch (error) {
-    console.error(error);
-    console.info("You should define an init() function to perform steps to initialize and reset the animation");
+    console.warn(error);
+    console.warn("You should define a reset() function to perform steps to reset the animation");
   }
 }
 
