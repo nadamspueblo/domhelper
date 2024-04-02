@@ -545,7 +545,7 @@ function resetAnimation() {
     stopAnimation();
     reset();
   } catch (error) {
-    console.warn(error);
+    console.error(error);
     console.warn("You should define a reset() function to perform steps to reset the animation");
   }
 }
