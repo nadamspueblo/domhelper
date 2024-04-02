@@ -37,8 +37,13 @@ function createControls() {
   stopButton.style.margin = "4px";
   stopButton.innerHTML = "Stop"
   stopButton.addEventListener("click", stopAnimation);
-  nav.style.visibility = "hidden";
   nav.append(stopButton);
+  let resetButton = document.createElement("button");
+  resetButton.style.margin = "4px";
+  resetButton.innerHTML = "Reset";
+  resetButton.addEventListener("click", resetAnimation);
+  nav.append(resetButton);
+  nav.style.visibility = "hidden";
   root.append(nav);
 }
 
@@ -533,6 +538,16 @@ function startAnimation() {
 
 function stopAnimation() {
   isRunning = false;
+}
+
+function resetAnimation() {
+  try {
+    stopAnimation();
+    init();
+  } catch (error) {
+    console.error(error);
+    console.info("You should define an init() function to perform steps to initialize and reset the animation");
+  }
 }
 
 function step(timeStamp) {
