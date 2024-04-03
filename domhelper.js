@@ -150,6 +150,7 @@ function createCircle(x, y, r, color = "inherit", id = "") {
   e.style.width = 2 * r + "px";
   e.style.height = 2 * r + "px";
   e.style.borderRadius = "50%";
+  e.style.transformOrigin = "top left";
   e.style.left = x + "px";
   e.style.top = y + "px";
   e.style.transform = "translate(-50%, -50%)";
