@@ -505,6 +505,21 @@ function onEvent(type, id, f) {
   }
 }
 
+function addEventListener(type, f, id = "") {
+  if (id != "") {
+    try {
+      let e = document.getElementById(id);
+      e.addEventListener(type, f);
+    }
+    catch (error) {
+      console.error(error);
+    }
+  }
+  else {
+    document.addEventListener(type, f);
+  }
+}
+
 function isTouching(id1, id2) {
   let e1 = document.getElementById(id1);
   let e2 = document.getElementById(id2);

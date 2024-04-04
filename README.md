@@ -290,26 +290,23 @@ Removes the click event from the element with the given id
 - ```id``` the id of the elment with the click event
 - ```f``` the name of the function associated with the click event
 
-## addKeyDownEvent(f)
-Assigns a function to call when a key is pressed
+## addEventListener(type, f, id)
+Assigns a function to call when the specified event happens
+- ```type``` the type of event to listen for. Some common ones are ```"click"```,```"keydown"```, ```"keyup"```, ```"mousedown"```, and ```"mouseup"```. For a complete list see [W3Schools HTML Events](https://www.w3schools.com/jsref/dom_obj_event.asp)
 - ```f``` the name of the function to call when a key is pressed
+- ```id``` *optional* the id of the HTML element to detect events for. If no id is specified, it will listen for events on the entire document  
+<br>
 The function should take an event parameter that will contain information about what key is pressed.
 
 ```javascript
-addKeyDownEvent(keyPressed);
+addEventListener("keydown", keyPressed);
 
 function keyPressed(event) {
-  if (event.code == "ArrowUp") {
-    console.log("The up arrow was pressed");
+  if (event.code == "ArrowLeft") {
+    console.log("The left arrow was pressed");
   }
 }
 ```
-
-## onEvent(type, id, f)
-Creates and event listener of the given type
-- ```type``` the type of event
-- ```id``` the id of the element
-- ```f``` the name of the function to call when the element is clicked
 
 ## isTouching(id1, id2)
 Returns true if the two elements are touching
