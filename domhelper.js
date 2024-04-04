@@ -547,9 +547,11 @@ function startAnimation() {
     console.error("You must define a mainLoop() function");
     return;
   }
-  isRunning = true;
-  isPaused = false;
-  window.requestAnimationFrame(step);
+  else if (!isRunning) {
+    isRunning = true;
+    isPaused = false;
+    window.requestAnimationFrame(step);
+  }
 }
 
 function stopAnimation() {
