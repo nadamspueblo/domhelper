@@ -532,10 +532,14 @@ function isTouching(id1, id2) {
     return false;
   }
 
-  let rect1 = e1.getBoundingClientRect();
-  let rect2 = e2.getBoundingClientRect();
-
-  return rect1.right > rect2.left && rect1.left < rect2.right && rect1.bottom > rect2.top && rect1.top < rect2.bottom;
+  if (e1.style.visibility != "hidden" && e2.style.visibility != "hidden") {
+    let rect1 = e1.getBoundingClientRect();
+    let rect2 = e2.getBoundingClientRect();
+    return rect1.right > rect2.left && rect1.left < rect2.right && rect1.bottom > rect2.top && rect1.top < rect2.bottom;
+  }
+  else {
+    return false;
+  }
 }
 
 /* *************** Animation ******************* */
