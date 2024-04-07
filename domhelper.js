@@ -414,7 +414,7 @@ function setStyle(property, value, id) {
 function getStyle(property, id) {
   let e = document.getElementById(id);
   if (e) {
-    return e.style[getCamelCaseProp(property)] = value;
+    return e.style[getCamelCaseProp(property)];
   }
   else console.error(id + " does not exist");
 }
