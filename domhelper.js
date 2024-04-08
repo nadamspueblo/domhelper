@@ -517,7 +517,7 @@ function setStyle(property, value, id) {
 function getStyle(property, id) {
   try {
     let e = document.getElementById(id);
-    return e.style[getCamelCaseProp(property)] = value;
+    return e.style[getCamelCaseProp(property)];
   }
   catch (error) {
     console.error(error.stack);
