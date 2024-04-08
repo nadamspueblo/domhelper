@@ -178,18 +178,18 @@ function attach(id, parentId = "") {
     parent.appendChild(e);
   }
   catch (error) {
-    console.error(error);
+    console.error(error).stack;
   }
 }
 
 function remove(id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     e.remove();
     return e;
   }
-  else {
-    console.error(id + " doesn't exist");
+  catch (error) {
+    console.error(error.stack);
   }
 }
 
@@ -200,8 +200,12 @@ function setWidth(value, id = "") {
     return;
   }
   let e = document.getElementById(id);
-  if (e) e.style.width = value + "px";
-  else console.error(id + " does not exist");
+  try {
+    e.style.width = value + "px";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getWidth(id = "") {
@@ -209,8 +213,12 @@ function getWidth(id = "") {
     return root.offsetWidth;
   }
   let e = document.getElementById(id);
-  if (e) return e.offsetWidth;
-  else console.error(id + " does not exist");
+  try {
+    return e.offsetWidth;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setHeight(value, id = "") {
@@ -219,8 +227,12 @@ function setHeight(value, id = "") {
     return;
   }
   let e = document.getElementById(id);
-  if (e) e.style.height = value + "px";
-  else console.error(id + " does not exist");
+  try {
+    e.style.height = value + "px";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getHeight(id = "") {
@@ -228,85 +240,118 @@ function getHeight(id = "") {
     return root.offsetHeight;
   }
   let e = document.getElementById(id);
-  if (e) return e.offsetHeight;
-  else console.error(id + " does not exist");
+  try { 
+    return e.offsetHeight;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setX(value, id) {
   let e = document.getElementById(id);
-  if (e) e.style.left = value + "px";
-  else console.error(id + " does not exist");
+  try {
+     e.style.left = value + "px";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getX(id) {
   let e = document.getElementById(id);
-  if (e) return e.offsetLeft;
-  else console.error(id + " does not exist");
+  try {
+     return e.offsetLeft;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setY(value, id) {
   let e = document.getElementById(id);
-  if (e) e.style.top = value + "px";
-  else console.error(id + " does not exist");
+  try { 
+    e.style.top = value + "px";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getY(id) {
   let e = document.getElementById(id);
-  if (e) return e.offsetTop;
-  else console.error(id + " does not exist");
+  try { 
+    return e.offsetTop;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function changeXBy(value, id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     e.style.left = e.offsetLeft + Number(value) + "px";
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function changeYBy(value, id) {
   let e = document.getElementById(id);
-  if (e) {
-    ;
+  try {
     e.style.top = e.offsetTop + Number(value) + "px";
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function move(value, id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     let deg = e.style.rotate.substring(0, e.style.rotate.indexOf("deg"));
     deg = Number(deg);
     let rad = deg * Math.PI / 180;
     e.style.left = (e.offsetLeft + Number(value) * Math.cos(rad)) + "px";
     e.style.top = (e.offsetTop + Number(value) * Math.sin(rad)) + "px";
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 /* ************* Rotation Functions ***************** */
 
 function setRotation(degrees, id) {
   let e = document.getElementById(id);
-  if (e) e.style.rotate = degrees + "deg";
-  else console.error(id + " does not exist");
+  try { 
+    e.style.rotate = degrees + "deg";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getRotation(id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     return stripUnits(e.style.rotate, "deg");
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function rotate(degrees, id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     e.style.rotate = stripUnits(e.style.rotate, "deg") + Number(degrees) + "deg";
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 /* ************* Navigation *********************** */
@@ -318,111 +363,161 @@ function navigateTo(url) {
 
 function setText(value, id) {
   let e = document.getElementById(id);
-  if (e) e.innerHTML = value;
-  else console.error(id + " does not exist");
+  try { 
+    e.innerHTML = value;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getText(id) {
   let e = document.getElementById(id);
-  if (e) return e.innerHTML;
-  else console.error(id + " does not exist");
+  try { 
+    return e.innerHTML;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setColor(color, id = "") {
-  if (id == "") {
-    root.style.backgroundColor = color;
-    return;
+  try {
+    if (id == "") {
+      root.style.backgroundColor = color;
+      return;
+    }
+    let e = document.getElementById(id);
+    e.style.backgroundColor = color;
   }
-  let e = document.getElementById(id);
-  if (e) e.style.backgroundColor = color;
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getColor(id = "") {
-  if (id == "") {
-    return root.style.backgroundColor;
+  try {
+    if (id == "") {
+      return root.style.backgroundColor;
+    }
+    let e = document.getElementById(id);
+    return e.style.backgroundColor;
   }
-  let e = document.getElementById(id);
-  if (e) return e.style.backgroundColor;
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setTextColor(color, id) {
   let e = document.getElementById(id);
-  if (e) e.style.color = color;
-  else console.error(id + " does not exist");
+  try {
+    e.style.color = color;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getTextColor(id) {
   let e = document.getElementById(id);
-  if (e) return e.style.color;
-  else console.error(id + " does not exist");
+  try {
+    return e.style.color;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setImage(url, id) {
   let e = document.getElementById(id);
-  if (e && e.tagName.toLowerCase() == "img") e.src = url;
-  else console.error(id + " does not exist or is not an image element");
+  try {
+    if (e && e.tagName.toLowerCase() == "img") e.src = url;
+    else console.error(id + " does not exist or is not an image element");
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getImage(id) {
   let e = document.getElementById(id);
-  if (e && e.tagName.toLowerCase() == "img") return e.src;
-  else console.error(id + " does not exist or is not an image element");
+  try {
+    if (e && e.tagName.toLowerCase() == "img") return e.src;
+    else console.error(id + " does not exist or is not an image element");
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function show(id) {
   let e = document.getElementById(id);
-  if (e) e.style.visibility = "visible";
-  else console.error(id + " does not exist");
+  try { 
+    e.style.visibility = "visible";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function showAll() {
-  const elements = getVisibleElements();
-  for (e of elements) {
-    e.style.visibility = "visible";
+  try {
+    const elements = getVisibleElements();
+    for (e of elements) {
+      e.style.visibility = "visible";
+    }
+  }
+  catch (error) {
+    console.error(error.stack);
   }
 }
 
 function hide(id) {
   let e = document.getElementById(id);
-  if (e) e.style.visibility = "hidden";
-  else console.error(id + " does not exist");
+  try {
+    e.style.visibility = "hidden";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function hideAll() {
-  const elements = getVisibleElements();
-  for (e of elements) {
-    e.style.visibility = "hidden";
+  try {
+    const elements = getVisibleElements();
+    for (e of elements) {
+      e.style.visibility = "hidden";
+    }
+  }
+  catch (error) {
+    console.error(error.stack);
   }
 }
 
 function isVisible(id) {
-  let e = document.getElementById(id);
-  if (e) return e.style.visibility != "hidden" && e.style.visibility != "collapse";
-  else console.error(id + " does not exist");
+  try {
+    let e = document.getElementById(id);
+    if (e) return e.style.visibility != "hidden" && e.style.visibility != "collapse";
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setStyle(property, value, id) {
-  let e = document.getElementById(id);
-  if (e) {
+  try {
+    let e = document.getElementById(id);
     e.style[getCamelCaseProp(property)] = value;
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function getStyle(property, id) {
-  let e = document.getElementById(id);
-  if (e) {
-    return e.style[getCamelCaseProp(property)];
-  }
-  else console.error(id + " does not exist");
-}
-
-function getAttr(name, id){
-  let e = document.getElementById(id)
   try {
-    return e[name];
+    let e = document.getElementById(id);
+    return e.style[getCamelCaseProp(property)] = value;
   }
   catch (error) {
     console.error(error.stack);
@@ -439,7 +534,7 @@ function playSound(url) {
 
 function getInputValue(id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     if (e.tagName.toLocaleLowerCase() == "input" || e.tagName.toLocaleLowerCase() == "button") {
       if (e.value)
         return e.value;
@@ -447,22 +542,31 @@ function getInputValue(id) {
     }
     else console.error(id + " is not an element that has an input value");
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function setInputValue(val, id) {
   let e = document.getElementById(id);
-  if (e) {
+  try {
     if (e.tagName.toLocaleLowerCase() == "input" || e.tagName.toLocaleLowerCase() == "button") {
       e.value = val;
     }
     else console.error(id + " is not an element that has an input value");
   }
-  else console.error(id + " does not exist");
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function clearInputValue(id) {
-  setInputValue("", id);
+  try {
+    setInputValue("", id);
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function isChecked(id) {
@@ -477,8 +581,7 @@ function isChecked(id) {
     }
   }
   catch (error) {
-    console.error(error);
-    console.error(id + " is not a checkbox or radio button");
+    console.error(error.stack);
     return false;
   }
 }
@@ -487,8 +590,12 @@ function isChecked(id) {
 
 function addClickEvent(id, f) {
   let e = document.getElementById(id);
-  if (e) e.addEventListener("click", f);
-  else console.error(id + " does not exist");
+  try {
+    e.addEventListener("click", f);
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
 }
 
 function removeClickEvent(id, f) {
@@ -497,7 +604,7 @@ function removeClickEvent(id, f) {
     e.removeEventListener("click", f);
   }
   catch (error) {
-    console.error(error);
+    console.error(error.stack);
   }
 }
 
@@ -522,7 +629,7 @@ function addEventListener(type, f, id = "") {
       e.addEventListener(type, f);
     }
     catch (error) {
-      console.error(error);
+      console.error(error.stack);
     }
   }
   else {
@@ -531,24 +638,29 @@ function addEventListener(type, f, id = "") {
 }
 
 function isTouching(id1, id2) {
-  let e1 = document.getElementById(id1);
-  let e2 = document.getElementById(id2);
-  if (!e1) {
-    console.error(id1 + " does not exist");
-    return false;
-  }
-  if (!e2) {
-    console.error(id2 + " does not exist");
-    return false;
-  }
+  try {
+    let e1 = document.getElementById(id1);
+    let e2 = document.getElementById(id2);
+    if (!e1) {
+      console.error(id1 + " does not exist");
+      return false;
+    }
+    if (!e2) {
+      console.error(id2 + " does not exist");
+      return false;
+    }
 
-  if (e1.style.visibility != "hidden" && e2.style.visibility != "hidden") {
-    let rect1 = e1.getBoundingClientRect();
-    let rect2 = e2.getBoundingClientRect();
-    return rect1.right > rect2.left && rect1.left < rect2.right && rect1.bottom > rect2.top && rect1.top < rect2.bottom;
+    if (e1.style.visibility != "hidden" && e2.style.visibility != "hidden") {
+      let rect1 = e1.getBoundingClientRect();
+      let rect2 = e2.getBoundingClientRect();
+      return rect1.right > rect2.left && rect1.left < rect2.right && rect1.bottom > rect2.top && rect1.top < rect2.bottom;
+    }
+    else {
+      return false;
+    }
   }
-  else {
-    return false;
+  catch (error) {
+    console.error(error.stack);
   }
 }
 
