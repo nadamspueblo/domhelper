@@ -419,6 +419,16 @@ function getStyle(property, id) {
   else console.error(id + " does not exist");
 }
 
+function getAttr(name, id){
+  let e = document.getElementById(id)
+  try {
+    return e[name];
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
+}
+
 /* ************ Sound ************************** */
 function playSound(url) {
   let sound = new Audio(url);
