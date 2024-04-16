@@ -44,7 +44,7 @@ function createControls() {
   resetButton.addEventListener("click", resetAnimation);
   nav.append(resetButton);
   nav.style.visibility = "hidden";
-  root.append(nav);
+  root.prepend(nav);
 }
 
 function hideControls() {
