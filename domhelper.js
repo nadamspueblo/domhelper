@@ -19,7 +19,7 @@ initialize();
 function createControls() {
   let nav = document.createElement("nav");
   nav.id = "controls";
-  nav.style.position = "relative";
+  nav.style.position = "absolute";
   nav.style.zIndex = 1000;
   nav.style.textAlign = "center";
   nav.style.backgroundColor = "darkgray";
