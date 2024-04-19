@@ -240,7 +240,7 @@ function getHeight(id = "") {
     return root.offsetHeight;
   }
   let e = document.getElementById(id);
-  try { 
+  try {
     return e.offsetHeight;
   }
   catch (error) {
@@ -251,7 +251,7 @@ function getHeight(id = "") {
 function setX(value, id) {
   let e = document.getElementById(id);
   try {
-     e.style.left = value + "px";
+    e.style.left = value + "px";
   }
   catch (error) {
     console.error(error.stack);
@@ -261,7 +261,7 @@ function setX(value, id) {
 function getX(id) {
   let e = document.getElementById(id);
   try {
-     return e.offsetLeft;
+    return e.offsetLeft;
   }
   catch (error) {
     console.error(error.stack);
@@ -270,7 +270,7 @@ function getX(id) {
 
 function setY(value, id) {
   let e = document.getElementById(id);
-  try { 
+  try {
     e.style.top = value + "px";
   }
   catch (error) {
@@ -280,7 +280,7 @@ function setY(value, id) {
 
 function getY(id) {
   let e = document.getElementById(id);
-  try { 
+  try {
     return e.offsetTop;
   }
   catch (error) {
@@ -322,11 +322,33 @@ function move(value, id) {
   }
 }
 
+function getTop(id) {
+  try {
+    let e = document.getElementById(id);
+    let offset = e.getBoundingClientRect();
+    return offset.top;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
+}
+
+function getBottom(id) {
+  try {
+    let e = document.getElementById(id);
+    let offset = e.getBoundingClientRect();
+    return offset.bottom;
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
+}
+
 /* ************* Rotation Functions ***************** */
 
 function setRotation(degrees, id) {
   let e = document.getElementById(id);
-  try { 
+  try {
     e.style.rotate = degrees + "deg";
   }
   catch (error) {
@@ -363,7 +385,7 @@ function navigateTo(url) {
 
 function setText(value, id) {
   let e = document.getElementById(id);
-  try { 
+  try {
     e.innerHTML = value;
   }
   catch (error) {
@@ -373,7 +395,7 @@ function setText(value, id) {
 
 function getText(id) {
   let e = document.getElementById(id);
-  try { 
+  try {
     return e.innerHTML;
   }
   catch (error) {
@@ -452,7 +474,7 @@ function getImage(id) {
 
 function show(id) {
   let e = document.getElementById(id);
-  try { 
+  try {
     e.style.visibility = "visible";
   }
   catch (error) {
@@ -518,6 +540,36 @@ function getStyle(property, id) {
   try {
     let e = document.getElementById(id);
     return e.style[getCamelCaseProp(property)];
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
+}
+
+function getClass(id) {
+  let e = document.getElementById(id);
+  try {
+    return e.classList[0];
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
+}
+
+function removeClass(name, id) {
+  let e = document.getElementById(id);
+  try {
+    e.classList.remove(name);
+  }
+  catch (error) {
+    console.error(error.stack);
+  }
+}
+
+function addClass(name, id) {
+  let e = document.getElementById(id);
+  try {
+    e.classList.add(name);
   }
   catch (error) {
     console.error(error.stack);
