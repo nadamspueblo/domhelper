@@ -179,6 +179,7 @@ function attach(id, parentId = "") {
   }
   catch (error) {
     console.error(error).stack;
+    console.error("id = " + id + " parentId = " + parentId);
   }
 }
 
@@ -265,6 +266,7 @@ function getX(id) {
   }
   catch (error) {
     console.error(error.stack);
+    console.error("id = " + id);
   }
 }
 
@@ -285,6 +287,7 @@ function getY(id) {
   }
   catch (error) {
     console.error(error.stack);
+    console.error("id = " + id);
   }
 }
 
