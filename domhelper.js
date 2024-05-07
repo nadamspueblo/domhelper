@@ -178,8 +178,7 @@ function attach(id, parentId = "") {
     parent.appendChild(e);
   }
   catch (error) {
-    console.error(error).stack;
-    console.error("id = " + id + " parentId = " + parentId);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct and parentId=\"" + parentId + "\"" : ""));
   }
 }
 
@@ -190,7 +189,7 @@ function remove(id) {
     return e;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -205,7 +204,7 @@ function setWidth(value, id = "") {
     e.style.width = value + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -218,7 +217,7 @@ function getWidth(id = "") {
     return e.offsetWidth;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -232,7 +231,7 @@ function setHeight(value, id = "") {
     e.style.height = value + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -245,7 +244,7 @@ function getHeight(id = "") {
     return e.offsetHeight;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -255,7 +254,7 @@ function setX(value, id) {
     e.style.left = value + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -265,8 +264,7 @@ function getX(id) {
     return e.offsetLeft;
   }
   catch (error) {
-    console.error(error.stack);
-    console.error("id = " + id);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -276,7 +274,7 @@ function setY(value, id) {
     e.style.top = value + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -286,8 +284,7 @@ function getY(id) {
     return e.offsetTop;
   }
   catch (error) {
-    console.error(error.stack);
-    console.error("id = " + id);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -297,7 +294,7 @@ function changeXBy(value, id) {
     e.style.left = e.offsetLeft + Number(value) + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -307,7 +304,7 @@ function changeYBy(value, id) {
     e.style.top = e.offsetTop + Number(value) + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -321,7 +318,7 @@ function move(value, id) {
     e.style.top = (e.offsetTop + Number(value) * Math.sin(rad)) + "px";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -332,7 +329,7 @@ function getTop(id) {
     return offset.top;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -343,7 +340,7 @@ function getBottom(id) {
     return offset.bottom;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -355,7 +352,7 @@ function setRotation(degrees, id) {
     e.style.rotate = degrees + "deg";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -365,7 +362,7 @@ function getRotation(id) {
     return stripUnits(e.style.rotate, "deg");
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -375,7 +372,7 @@ function rotate(degrees, id) {
     e.style.rotate = stripUnits(e.style.rotate, "deg") + Number(degrees) + "deg";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -392,7 +389,7 @@ function setText(value, id) {
     e.innerHTML = value;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -402,7 +399,7 @@ function getText(id) {
     return e.innerHTML;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -416,7 +413,7 @@ function setColor(color, id = "") {
     e.style.backgroundColor = color;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -429,7 +426,7 @@ function getColor(id = "") {
     return e.style.backgroundColor;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -439,7 +436,7 @@ function setTextColor(color, id) {
     e.style.color = color;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -449,7 +446,7 @@ function getTextColor(id) {
     return e.style.color;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -460,7 +457,7 @@ function setImage(url, id) {
     else console.error(id + " does not exist or is not an image element");
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -471,7 +468,7 @@ function getImage(id) {
     else console.error(id + " does not exist or is not an image element");
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -481,7 +478,7 @@ function show(id) {
     e.style.visibility = "visible";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -503,7 +500,7 @@ function hide(id) {
     e.style.visibility = "hidden";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -525,7 +522,7 @@ function isVisible(id) {
     if (e) return e.style.visibility != "hidden" && e.style.visibility != "collapse";
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -535,7 +532,7 @@ function setStyle(property, value, id) {
     e.style[getCamelCaseProp(property)] = value;
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -545,7 +542,7 @@ function getStyle(property, id) {
     return e.style[getCamelCaseProp(property)];
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -555,7 +552,7 @@ function getClass(id) {
     return e.classList[0];
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -565,7 +562,7 @@ function removeClass(name, id) {
     e.classList.remove(name);
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -575,7 +572,7 @@ function addClass(name, id) {
     e.classList.add(name);
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -598,7 +595,7 @@ function getInputValue(id) {
     else console.error(id + " is not an element that has an input value");
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -611,7 +608,7 @@ function setInputValue(val, id) {
     else console.error(id + " is not an element that has an input value");
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -620,7 +617,7 @@ function clearInputValue(id) {
     setInputValue("", id);
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -636,7 +633,7 @@ function isChecked(id) {
     }
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
     return false;
   }
 }
@@ -649,7 +646,7 @@ function addClickEvent(id, f) {
     e.addEventListener("click", f);
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -659,7 +656,7 @@ function removeClickEvent(id, f) {
     e.removeEventListener("click", f);
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -673,7 +670,7 @@ function onEvent(type, id, f) {
     e.addEventListener(type, f);
   }
   catch (error) {
-    console.error(error);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
   }
 }
 
@@ -684,7 +681,7 @@ function addEventListener(type, f, id = "") {
       e.addEventListener(type, f);
     }
     catch (error) {
-      console.error(error.stack);
+      console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id=\"" + id + "\" is correct" : ""));
     }
   }
   else {
@@ -715,7 +712,7 @@ function isTouching(id1, id2) {
     }
   }
   catch (error) {
-    console.error(error.stack);
+    console.error(error.stack + (error instanceof TypeError ? "\n\tcheck that id1=\"" + id2 + "\" and id2=\"" + id2 + "\" is correct" : ""));
   }
 }
 
